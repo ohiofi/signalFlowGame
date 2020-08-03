@@ -1,0 +1,883 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Signal Flow</title>
+<style>
+
+#diagram{
+	position:absolute;
+	left:220px;
+	top:0px;
+	z-index:1;
+}
+
+#form1{
+	position:absolute;
+	left:22px;
+	top:46px;
+	z-index:100;
+}
+
+#form2{
+	position:absolute;
+	left:22px;
+	top:82px;
+	z-index:100;
+}
+
+#form3{
+	position:absolute;
+	left:22px;
+	top:110px;
+	z-index:100;
+}
+
+#form4{
+	position:absolute;
+	left:60px;
+	top:145px;
+	z-index:100;
+}
+
+#form5{
+	position:absolute;
+	left:448px;
+	top:164px;
+	z-index:100;
+}
+
+#form6{
+	position:absolute;
+	left:60px;
+	top:188px;
+	z-index:100;
+}
+
+#form7{
+	position:absolute;
+	left:448px;
+	top:205px;
+	z-index:100;
+}
+
+#form8{
+	position:absolute;
+	left:60px;
+	top:234px;
+	z-index:100;
+}
+
+#form9{
+	position:absolute;
+	left:341px;
+	top:258px;
+	z-index:100;
+}
+
+#form10{
+	position:absolute;
+	left:22px;
+	top:278px;
+	z-index:100;
+}
+
+#form11{
+	position:absolute;
+	left:22px;
+	top:302px;
+	z-index:100;
+}
+
+#form12{
+	position:absolute;
+	left:22px;
+	top:380px;
+	z-index:100;
+}
+
+#form13{
+	position:absolute;
+	left:440px;
+	top:398px;
+	z-index:100;
+}
+
+
+#form14{
+	position:absolute;
+	left:60px;
+	top:415px;
+	z-index:100;
+}
+
+#form15{
+	position:absolute;
+	left:440px;
+	top:427px;
+	z-index:100;
+}
+
+
+#form16{
+	position:absolute;
+	left:60px;
+	top:445px;
+	z-index:100;
+}
+
+
+#form17{
+	position:absolute;
+	left:336px;
+	top:475px;
+	z-index:100;
+}
+
+
+#form18{
+	position:absolute;
+	left:60px;
+	top:516px;
+	z-index:100;
+}
+
+
+#form19{
+	position:absolute;
+	left:60px;
+	top:562px;
+	z-index:100;
+}
+
+
+#form20{
+	position:absolute;
+	left:310px;
+	top:587px;
+	z-index:100;
+}
+
+.hideMe{
+	display:none;
+}
+
+.showMe{
+	display:block;
+}
+
+#copyright{
+	position:absolute;
+	left:24px;
+	top:620px;
+	z-index:100;
+}
+
+#footer {
+	width:1000px;
+	height:20px;
+	margin:0 auto 0 auto;
+	text-align:center;
+	font-size:9px;
+}
+
+.popup {
+	display:none;
+	position:absolute;
+	left:15px;
+	top:15px;
+	width:300px;
+	padding:0 20px 40px 20px;
+	opacity:1;
+	text-align:center;
+	background-color:#fff;
+	font-size:16px;
+	border:3px solid black;
+	-webkit-border-radius:10px;
+	-moz-border-radius:10px;
+	z-index:5000;
+	-webkit-box-shadow:0 0 8px rgba(67,71,60,0.9);
+	-moz-box-shadow:0 0 8px rgba(67,71,60,0.9);
+}
+
+.popupActive {
+	display:block !important;
+}
+
+
+
+</style>
+
+</head>
+<body>
+
+<img id="diagram" src="img/signal_flow_diagram.png">
+
+
+<form id="form1" name="form1" method="post" action="">
+  
+  <select name="Question01" id="1" class="hideMe" onChange="checkAnswer(this.value)">
+    <!-- Add items and values to the widget-->
+    <option>Please select an item</option>
+    <option value="-1">Bus ACN</option>
+    <option value="-1">Bus Output Fader</option>
+    <option value="-1">Bus/Pan Assign</option>
+    <option value="-1">Bus/Tape Switch</option>
+    <option value="-1">Control Room Volume</option>
+	<option value="-1">Direct Out</option>
+	<option value="-1">EQ</option>
+	<option value="-1">Input Fader</option>
+	<option value="-1">Mic/Line Switch</option>
+	<option value="-1">Monitor Fader</option>
+	<option value="-1">Monitor Pan</option>
+	<option value="1">Pad</option>
+	<option value="-1">Post-Input Fader Aux Sends</option>
+	<option value="-1">Post-Monitor Fader Aux Sends</option>
+	<option value="-1">Pre-Amp</option>
+	<option value="-1">Pre-Input Fader Aux Sends</option>
+	<option value="-1">Pre-Monitor Fader Aux Sends</option>
+	<option value="-1">Stereo ACNs</option>
+	<option value="-1">Stereo Master Fader</option>
+	<option value="-1">Switching Bank</option>
+  </select>
+  
+</form>
+
+
+<form id="form2" name="form2" method="post" action="">
+  
+  <select name="Question02" id="2"  class="hideMe" onChange="checkAnswer(this.value)">
+    <!-- Add items and values to the widget-->
+    <option>Please select an item</option>
+    <option value="-1">Bus ACN</option>
+    <option value="-1">Bus Output Fader</option>
+    <option value="-1">Bus/Pan Assign</option>
+    <option value="-1">Bus/Tape Switch</option>
+    <option value="-1">Control Room Volume</option>
+	<option value="-1">Direct Out</option>
+	<option value="-1">EQ</option>
+	<option value="-1">Input Fader</option>
+	<option value="-1">Mic/Line Switch</option>
+	<option value="-1">Monitor Fader</option>
+	<option value="-1">Monitor Pan</option>
+	<option value="-1">Pad</option>
+	<option value="-1">Post-Input Fader Aux Sends</option>
+	<option value="-1">Post-Monitor Fader Aux Sends</option>
+	<option value="2">Pre-Amp</option>
+	<option value="-1">Pre-Input Fader Aux Sends</option>
+	<option value="-1">Pre-Monitor Fader Aux Sends</option>
+	<option value="-1">Stereo ACNs</option>
+	<option value="-1">Stereo Master Fader</option>
+	<option value="-1">Switching Bank</option>
+  </select>
+  
+</form>
+
+
+<form id="form3" name="form3" method="post" action="">
+  
+  <select name="Question03" id="3"  class="hideMe" onChange="checkAnswer(this.value)">
+    <!-- Add items and values to the widget-->
+    <option>Please select an item</option>
+    <option value="-1">Bus ACN</option>
+    <option value="-1">Bus Output Fader</option>
+    <option value="-1">Bus/Pan Assign</option>
+    <option value="-1">Bus/Tape Switch</option>
+    <option value="-1">Control Room Volume</option>
+	<option value="-1">Direct Out</option>
+	<option value="-1">EQ</option>
+	<option value="-1">Input Fader</option>
+	<option value="3">Mic/Line Switch</option>
+	<option value="-1">Monitor Fader</option>
+	<option value="-1">Monitor Pan</option>
+	<option value="-1">Pad</option>
+	<option value="-1">Post-Input Fader Aux Sends</option>
+	<option value="-1">Post-Monitor Fader Aux Sends</option>
+	<option value="-1">Pre-Amp</option>
+	<option value="-1">Pre-Input Fader Aux Sends</option>
+	<option value="-1">Pre-Monitor Fader Aux Sends</option>
+	<option value="-1">Stereo ACNs</option>
+	<option value="-1">Stereo Master Fader</option>
+	<option value="-1">Switching Bank</option>
+  </select>
+  
+</form>
+
+
+<form id="form4" name="form4" method="post" action="">
+  
+  <select name="Question04" id="4"   class="hideMe" onChange="checkAnswer(this.value)">
+    <!-- Add items and values to the widget-->
+    <option>Please select an item</option>
+    <option value="-1">Bus ACN</option>
+    <option value="-1">Bus Output Fader</option>
+    <option value="-1">Bus/Pan Assign</option>
+    <option value="-1">Bus/Tape Switch</option>
+    <option value="-1">Control Room Volume</option>
+	<option value="-1">Direct Out</option>
+	<option value="4">EQ</option>
+	<option value="-1">Input Fader</option>
+	<option value="-1">Mic/Line Switch</option>
+	<option value="-1">Monitor Fader</option>
+	<option value="-1">Monitor Pan</option>
+	<option value="-1">Pad</option>
+	<option value="-1">Post-Input Fader Aux Sends</option>
+	<option value="-1">Post-Monitor Fader Aux Sends</option>
+	<option value="-1">Pre-Amp</option>
+	<option value="-1">Pre-Input Fader Aux Sends</option>
+	<option value="-1">Pre-Monitor Fader Aux Sends</option>
+	<option value="-1">Stereo ACNs</option>
+	<option value="-1">Stereo Master Fader</option>
+	<option value="-1">Switching Bank</option>
+  </select>
+  
+</form>
+
+
+<form id="form5" name="form5" method="post" action="">
+  
+  <select name="Question05" id="5"   class="hideMe" onChange="checkAnswer(this.value)">
+    <!-- Add items and values to the widget-->
+    <option>Please select an item</option>
+    <option value="-1">Bus ACN</option>
+    <option value="-1">Bus Output Fader</option>
+    <option value="-1">Bus/Pan Assign</option>
+    <option value="-1">Bus/Tape Switch</option>
+    <option value="-1">Control Room Volume</option>
+	<option value="-1">Direct Out</option>
+	<option value="-1">EQ</option>
+	<option value="-1">Input Fader</option>
+	<option value="-1">Mic/Line Switch</option>
+	<option value="-1">Monitor Fader</option>
+	<option value="-1">Monitor Pan</option>
+	<option value="-1">Pad</option>
+	<option value="-1">Post-Input Fader Aux Sends</option>
+	<option value="-1">Post-Monitor Fader Aux Sends</option>
+	<option value="-1">Pre-Amp</option>
+	<option value="5">Pre-Input Fader Aux Sends</option>
+	<option value="-1">Pre-Monitor Fader Aux Sends</option>
+	<option value="-1">Stereo ACNs</option>
+	<option value="-1">Stereo Master Fader</option>
+	<option value="-1">Switching Bank</option>
+  </select>
+  
+</form>
+
+
+<form id="form6" name="form6" method="post" action="">
+  
+  <select name="Question06" id="6"   class="hideMe" onChange="checkAnswer(this.value)">
+    <!-- Add items and values to the widget-->
+    <option>Please select an item</option>
+    <option value="-1">Bus ACN</option>
+    <option value="-1">Bus Output Fader</option>
+    <option value="-1">Bus/Pan Assign</option>
+    <option value="-1">Bus/Tape Switch</option>
+    <option value="-1">Control Room Volume</option>
+	<option value="-1">Direct Out</option>
+	<option value="-1">EQ</option>
+	<option value="6">Input Fader</option>
+	<option value="-1">Mic/Line Switch</option>
+	<option value="-1">Monitor Fader</option>
+	<option value="-1">Monitor Pan</option>
+	<option value="-1">Pad</option>
+	<option value="-1">Post-Input Fader Aux Sends</option>
+	<option value="-1">Post-Monitor Fader Aux Sends</option>
+	<option value="-1">Pre-Amp</option>
+	<option value="-1">Pre-Input Fader Aux Sends</option>
+	<option value="-1">Pre-Monitor Fader Aux Sends</option>
+	<option value="-1">Stereo ACNs</option>
+	<option value="-1">Stereo Master Fader</option>
+	<option value="-1">Switching Bank</option>
+  </select>
+  
+</form>
+
+
+<form id="form7" name="form7" method="post" action="">
+  
+  <select name="Question07" id="7"   class="hideMe" onChange="checkAnswer(this.value)">
+    <!-- Add items and values to the widget-->
+    <option>Please select an item</option>
+    <option value="-1">Bus ACN</option>
+    <option value="-1">Bus Output Fader</option>
+    <option value="-1">Bus/Pan Assign</option>
+    <option value="-1">Bus/Tape Switch</option>
+    <option value="-1">Control Room Volume</option>
+	<option value="-1">Direct Out</option>
+	<option value="-1">EQ</option>
+	<option value="-1">Input Fader</option>
+	<option value="-1">Mic/Line Switch</option>
+	<option value="-1">Monitor Fader</option>
+	<option value="-1">Monitor Pan</option>
+	<option value="-1">Pad</option>
+	<option value="7">Post-Input Fader Aux Sends</option>
+	<option value="-1">Post-Monitor Fader Aux Sends</option>
+	<option value="-1">Pre-Amp</option>
+	<option value="-1">Pre-Input Fader Aux Sends</option>
+	<option value="-1">Pre-Monitor Fader Aux Sends</option>
+	<option value="-1">Stereo ACNs</option>
+	<option value="-1">Stereo Master Fader</option>
+	<option value="-1">Switching Bank</option>
+  </select>
+  
+</form>
+
+
+<form id="form8" name="form8" method="post" action="">
+  
+  <select name="Question08" id="8"   class="hideMe" onChange="checkAnswer(this.value)">
+    <!-- Add items and values to the widget-->
+    <option>Please select an item</option>
+    <option value="-1">Bus ACN</option>
+    <option value="-1">Bus Output Fader</option>
+    <option value="8">Bus/Pan Assign</option>
+    <option value="-1">Bus/Tape Switch</option>
+    <option value="-1">Control Room Volume</option>
+	<option value="-1">Direct Out</option>
+	<option value="-1">EQ</option>
+	<option value="-1">Input Fader</option>
+	<option value="-1">Mic/Line Switch</option>
+	<option value="-1">Monitor Fader</option>
+	<option value="-1">Monitor Pan</option>
+	<option value="-1">Pad</option>
+	<option value="-1">Post-Input Fader Aux Sends</option>
+	<option value="-1">Post-Monitor Fader Aux Sends</option>
+	<option value="-1">Pre-Amp</option>
+	<option value="-1">Pre-Input Fader Aux Sends</option>
+	<option value="-1">Pre-Monitor Fader Aux Sends</option>
+	<option value="-1">Stereo ACNs</option>
+	<option value="-1">Stereo Master Fader</option>
+	<option value="-1">Switching Bank</option>
+  </select>
+  
+</form>
+
+
+<form id="form9" name="form9" method="post" action="">
+  
+  <select name="Question09" id="9"   class="hideMe" onChange="checkAnswer(this.value)">
+    <!-- Add items and values to the widget-->
+    <option>Please select an item</option>
+    <option value="-1">Bus ACN</option>
+    <option value="-1">Bus Output Fader</option>
+    <option value="-1">Bus/Pan Assign</option>
+    <option value="-1">Bus/Tape Switch</option>
+    <option value="-1">Control Room Volume</option>
+	<option value="9">Direct Out</option>
+	<option value="-1">EQ</option>
+	<option value="-1">Input Fader</option>
+	<option value="-1">Mic/Line Switch</option>
+	<option value="-1">Monitor Fader</option>
+	<option value="-1">Monitor Pan</option>
+	<option value="-1">Pad</option>
+	<option value="-1">Post-Input Fader Aux Sends</option>
+	<option value="-1">Post-Monitor Fader Aux Sends</option>
+	<option value="-1">Pre-Amp</option>
+	<option value="-1">Pre-Input Fader Aux Sends</option>
+	<option value="-1">Pre-Monitor Fader Aux Sends</option>
+	<option value="-1">Stereo ACNs</option>
+	<option value="-1">Stereo Master Fader</option>
+	<option value="-1">Switching Bank</option>
+  </select>
+  
+</form>
+
+
+<form id="form10" name="form10" method="post" action="">
+  
+  <select name="Question10" id="10"  class="hideMe" onChange="checkAnswer(this.value)">
+    <!-- Add items and values to the widget-->
+    <option>Please select an item</option>
+    <option value="10">Bus ACN</option>
+    <option value="-1">Bus Output Fader</option>
+    <option value="-1">Bus/Pan Assign</option>
+    <option value="-1">Bus/Tape Switch</option>
+    <option value="-1">Control Room Volume</option>
+	<option value="-1">Direct Out</option>
+	<option value="-1">EQ</option>
+	<option value="-1">Input Fader</option>
+	<option value="-1">Mic/Line Switch</option>
+	<option value="-1">Monitor Fader</option>
+	<option value="-1">Monitor Pan</option>
+	<option value="-1">Pad</option>
+	<option value="-1">Post-Input Fader Aux Sends</option>
+	<option value="-1">Post-Monitor Fader Aux Sends</option>
+	<option value="-1">Pre-Amp</option>
+	<option value="-1">Pre-Input Fader Aux Sends</option>
+	<option value="-1">Pre-Monitor Fader Aux Sends</option>
+	<option value="-1">Stereo ACNs</option>
+	<option value="-1">Stereo Master Fader</option>
+	<option value="-1">Switching Bank</option>
+  </select>
+  
+</form>
+
+
+<form id="form11" name="form11" method="post" action="">
+  
+  <select name="Question11" id="11"  class="hideMe" onChange="checkAnswer(this.value)">
+    <!-- Add items and values to the widget-->
+    <option>Please select an item</option>
+    <option value="-1">Bus ACN</option>
+    <option value="11">Bus Output Fader</option>
+    <option value="-1">Bus/Pan Assign</option>
+    <option value="-1">Bus/Tape Switch</option>
+    <option value="-1">Control Room Volume</option>
+	<option value="-1">Direct Out</option>
+	<option value="-1">EQ</option>
+	<option value="-1">Input Fader</option>
+	<option value="-1">Mic/Line Switch</option>
+	<option value="-1">Monitor Fader</option>
+	<option value="-1">Monitor Pan</option>
+	<option value="-1">Pad</option>
+	<option value="-1">Post-Input Fader Aux Sends</option>
+	<option value="-1">Post-Monitor Fader Aux Sends</option>
+	<option value="-1">Pre-Amp</option>
+	<option value="-1">Pre-Input Fader Aux Sends</option>
+	<option value="-1">Pre-Monitor Fader Aux Sends</option>
+	<option value="-1">Stereo ACNs</option>
+	<option value="-1">Stereo Master Fader</option>
+	<option value="-1">Switching Bank</option>
+  </select>
+  
+</form>
+
+
+<form id="form12" name="form12" method="post" action="">
+  
+  <select name="Question12" id="12"  class="hideMe" onChange="checkAnswer(this.value)">
+    <!-- Add items and values to the widget-->
+    <option>Please select an item</option>
+    <option value="-1">Bus ACN</option>
+    <option value="-1">Bus Output Fader</option>
+    <option value="-1">Bus/Pan Assign</option>
+    <option value="12">Bus/Tape Switch</option>
+    <option value="-1">Control Room Volume</option>
+	<option value="-1">Direct Out</option>
+	<option value="-1">EQ</option>
+	<option value="-1">Input Fader</option>
+	<option value="-1">Mic/Line Switch</option>
+	<option value="-1">Monitor Fader</option>
+	<option value="-1">Monitor Pan</option>
+	<option value="-1">Pad</option>
+	<option value="-1">Post-Input Fader Aux Sends</option>
+	<option value="-1">Post-Monitor Fader Aux Sends</option>
+	<option value="-1">Pre-Amp</option>
+	<option value="-1">Pre-Input Fader Aux Sends</option>
+	<option value="-1">Pre-Monitor Fader Aux Sends</option>
+	<option value="-1">Stereo ACNs</option>
+	<option value="-1">Stereo Master Fader</option>
+	<option value="-1">Switching Bank</option>
+  </select>
+  
+</form>
+
+
+<form id="form13" name="form13" method="post" action="">
+  
+  <select name="Question13" id="13"  class="hideMe" onChange="checkAnswer(this.value)">
+    <!-- Add items and values to the widget-->
+    <option>Please select an item</option>
+    <option value="-1">Bus ACN</option>
+    <option value="-1">Bus Output Fader</option>
+    <option value="-1">Bus/Pan Assign</option>
+    <option value="-1">Bus/Tape Switch</option>
+    <option value="-1">Control Room Volume</option>
+	<option value="-1">Direct Out</option>
+	<option value="-1">EQ</option>
+	<option value="-1">Input Fader</option>
+	<option value="-1">Mic/Line Switch</option>
+	<option value="-1">Monitor Fader</option>
+	<option value="-1">Monitor Pan</option>
+	<option value="-1">Pad</option>
+	<option value="-1">Post-Input Fader Aux Sends</option>
+	<option value="-1">Post-Monitor Fader Aux Sends</option>
+	<option value="-1">Pre-Amp</option>
+	<option value="-1">Pre-Input Fader Aux Sends</option>
+	<option value="13">Pre-Monitor Fader Aux Sends</option>
+	<option value="-1">Stereo ACNs</option>
+	<option value="-1">Stereo Master Fader</option>
+	<option value="-1">Switching Bank</option>
+  </select>
+  
+</form>
+
+
+<form id="form14" name="form14" method="post" action="">
+  
+  <select name="Question14" id="14"  class="hideMe" onChange="checkAnswer(this.value)">
+    <!-- Add items and values to the widget-->
+    <option>Please select an item</option>
+    <option value="-1">Bus ACN</option>
+    <option value="-1">Bus Output Fader</option>
+    <option value="-1">Bus/Pan Assign</option>
+    <option value="-1">Bus/Tape Switch</option>
+    <option value="-1">Control Room Volume</option>
+	<option value="-1">Direct Out</option>
+	<option value="-1">EQ</option>
+	<option value="-1">Input Fader</option>
+	<option value="-1">Mic/Line Switch</option>
+	<option value="14">Monitor Fader</option>
+	<option value="-1">Monitor Pan</option>
+	<option value="-1">Pad</option>
+	<option value="-1">Post-Input Fader Aux Sends</option>
+	<option value="-1">Post-Monitor Fader Aux Sends</option>
+	<option value="-1">Pre-Amp</option>
+	<option value="-1">Pre-Input Fader Aux Sends</option>
+	<option value="-1">Pre-Monitor Fader Aux Sends</option>
+	<option value="-1">Stereo ACNs</option>
+	<option value="-1">Stereo Master Fader</option>
+	<option value="-1">Switching Bank</option>
+  </select>
+  
+</form>
+
+
+<form id="form15" name="form15" method="post" action="">
+  
+  <select name="Question15" id="15"  class="hideMe" onChange="checkAnswer(this.value)">
+    <!-- Add items and values to the widget-->
+    <option>Please select an item</option>
+    <option value="-1">Bus ACN</option>
+    <option value="-1">Bus Output Fader</option>
+    <option value="-1">Bus/Pan Assign</option>
+    <option value="-1">Bus/Tape Switch</option>
+    <option value="-1">Control Room Volume</option>
+	<option value="-1">Direct Out</option>
+	<option value="-1">EQ</option>
+	<option value="-1">Input Fader</option>
+	<option value="-1">Mic/Line Switch</option>
+	<option value="-1">Monitor Fader</option>
+	<option value="-1">Monitor Pan</option>
+	<option value="-1">Pad</option>
+	<option value="-1">Post-Input Fader Aux Sends</option>
+	<option value="15">Post-Monitor Fader Aux Sends</option>
+	<option value="-1">Pre-Amp</option>
+	<option value="-1">Pre-Input Fader Aux Sends</option>
+	<option value="-1">Pre-Monitor Fader Aux Sends</option>
+	<option value="-1">Stereo ACNs</option>
+	<option value="-1">Stereo Master Fader</option>
+	<option value="-1">Switching Bank</option>
+  </select>
+  
+</form>
+
+
+<form id="form16" name="form16" method="post" action="">
+  
+  <select name="Question16" id="16"  class="hideMe" onChange="checkAnswer(this.value)">
+    <!-- Add items and values to the widget-->
+    <option>Please select an item</option>
+    <option value="-1">Bus ACN</option>
+    <option value="-1">Bus Output Fader</option>
+    <option value="-1">Bus/Pan Assign</option>
+    <option value="-1">Bus/Tape Switch</option>
+    <option value="-1">Control Room Volume</option>
+	<option value="-1">Direct Out</option>
+	<option value="-1">EQ</option>
+	<option value="-1">Input Fader</option>
+	<option value="-1">Mic/Line Switch</option>
+	<option value="-1">Monitor Fader</option>
+	<option value="16">Monitor Pan</option>
+	<option value="-1">Pad</option>
+	<option value="-1">Post-Input Fader Aux Sends</option>
+	<option value="-1">Post-Monitor Fader Aux Sends</option>
+	<option value="-1">Pre-Amp</option>
+	<option value="-1">Pre-Input Fader Aux Sends</option>
+	<option value="-1">Pre-Monitor Fader Aux Sends</option>
+	<option value="-1">Stereo ACNs</option>
+	<option value="-1">Stereo Master Fader</option>
+	<option value="-1">Switching Bank</option>
+  </select>
+  
+</form>
+
+
+<form id="form17" name="form17" method="post" action="">
+  
+  <select name="Question17" id="17"  class="hideMe" onChange="checkAnswer(this.value)">
+    <!-- Add items and values to the widget-->
+    <option>Please select an item</option>
+    <option value="-1">Bus ACN</option>
+    <option value="-1">Bus Output Fader</option>
+    <option value="-1">Bus/Pan Assign</option>
+    <option value="-1">Bus/Tape Switch</option>
+    <option value="-1">Control Room Volume</option>
+	<option value="-1">Direct Out</option>
+	<option value="-1">EQ</option>
+	<option value="-1">Input Fader</option>
+	<option value="-1">Mic/Line Switch</option>
+	<option value="-1">Monitor Fader</option>
+	<option value="-1">Monitor Pan</option>
+	<option value="-1">Pad</option>
+	<option value="-1">Post-Input Fader Aux Sends</option>
+	<option value="-1">Post-Monitor Fader Aux Sends</option>
+	<option value="-1">Pre-Amp</option>
+	<option value="-1">Pre-Input Fader Aux Sends</option>
+	<option value="-1">Pre-Monitor Fader Aux Sends</option>
+	<option value="17">Stereo ACNs</option>
+	<option value="-1">Stereo Master Fader</option>
+	<option value="-1">Switching Bank</option>
+  </select>
+  
+</form>
+
+
+<form id="form18" name="form18" method="post" action="">
+  
+  <select name="Question18" id="18"  class="hideMe" onChange="checkAnswer(this.value)">
+    <!-- Add items and values to the widget-->
+    <option>Please select an item</option>
+    <option value="-1">Bus ACN</option>
+    <option value="-1">Bus Output Fader</option>
+    <option value="-1">Bus/Pan Assign</option>
+    <option value="-1">Bus/Tape Switch</option>
+    <option value="-1">Control Room Volume</option>
+	<option value="-1">Direct Out</option>
+	<option value="-1">EQ</option>
+	<option value="-1">Input Fader</option>
+	<option value="-1">Mic/Line Switch</option>
+	<option value="-1">Monitor Fader</option>
+	<option value="-1">Monitor Pan</option>
+	<option value="-1">Pad</option>
+	<option value="-1">Post-Input Fader Aux Sends</option>
+	<option value="-1">Post-Monitor Fader Aux Sends</option>
+	<option value="-1">Pre-Amp</option>
+	<option value="-1">Pre-Input Fader Aux Sends</option>
+	<option value="-1">Pre-Monitor Fader Aux Sends</option>
+	<option value="-1">Stereo ACNs</option>
+	<option value="18">Stereo Master Fader</option>
+	<option value="-1">Switching Bank</option>
+  </select>
+  
+</form>
+
+
+<form id="form19" name="form19" method="post" action="">
+  
+  <select name="Question19" id="19"  class="hideMe" onChange="checkAnswer(this.value)">
+    <!-- Add items and values to the widget-->
+    <option>Please select an item</option>
+    <option value="-1">Bus ACN</option>
+    <option value="-1">Bus Output Fader</option>
+    <option value="-1">Bus/Pan Assign</option>
+    <option value="-1">Bus/Tape Switch</option>
+    <option value="-1">Control Room Volume</option>
+	<option value="-1">Direct Out</option>
+	<option value="-1">EQ</option>
+	<option value="-1">Input Fader</option>
+	<option value="-1">Mic/Line Switch</option>
+	<option value="-1">Monitor Fader</option>
+	<option value="-1">Monitor Pan</option>
+	<option value="-1">Pad</option>
+	<option value="-1">Post-Input Fader Aux Sends</option>
+	<option value="-1">Post-Monitor Fader Aux Sends</option>
+	<option value="-1">Pre-Amp</option>
+	<option value="-1">Pre-Input Fader Aux Sends</option>
+	<option value="-1">Pre-Monitor Fader Aux Sends</option>
+	<option value="-1">Stereo ACNs</option>
+	<option value="-1">Stereo Master Fader</option>
+	<option value="19">Switching Bank</option>
+  </select>
+  
+</form>
+
+
+<form id="form20" name="form20" method="post" action="">
+  
+  <select name="Question20" id="20"  class="hideMe" onChange="checkAnswer(this.value)">
+    <!-- Add items and values to the widget-->
+    <option>Please select an item</option>
+    <option value="-1">Bus ACN</option>
+    <option value="-1">Bus Output Fader</option>
+    <option value="-1">Bus/Pan Assign</option>
+    <option value="-1">Bus/Tape Switch</option>
+    <option value="20">Control Room Volume</option>
+	<option value="-1">Direct Out</option>
+	<option value="-1">EQ</option>
+	<option value="-1">Input Fader</option>
+	<option value="-1">Mic/Line Switch</option>
+	<option value="-1">Monitor Fader</option>
+	<option value="-1">Monitor Pan</option>
+	<option value="-1">Pad</option>
+	<option value="-1">Post-Input Fader Aux Sends</option>
+	<option value="-1">Post-Monitor Fader Aux Sends</option>
+	<option value="-1">Pre-Amp</option>
+	<option value="-1">Pre-Input Fader Aux Sends</option>
+	<option value="-1">Pre-Monitor Fader Aux Sends</option>
+	<option value="-1">Stereo ACNs</option>
+	<option value="-1">Stereo Master Fader</option>
+	<option value="-1">Switching Bank</option>
+  </select>
+  
+</form>
+
+<div id="copyright">&copy; 2011 Justin Riley</div>
+<div id="footer">
+        	<div id="greatJob" class="popup">
+            	<h2>
+                	<?php $my_array = array(0 => "Great Job!", 1 => "Nicely Done!", 2 => "That's Right!");
+					shuffle($my_array);
+					echo($my_array[0]);
+					?>               
+                </h2>
+              <form id="form1" name="form1" action="<?php echo $editFormAction; ?>" method="POST"><input name="entryNumber" type="hidden" value="" /><input name="userName" type="hidden" value="" /><input type="hidden" name="question1" id="question1" value=""><input type="hidden" name="response1" id="response1" value=""><input name="tally" type="hidden" value="1" /><input name="questionNumber" type="hidden" value="<?php echo $currentQuestion; ?>" /><input name="points" type="hidden" value="<?=$points ?>" /><input name="userNumber" type="hidden" value="<?=$row_rsUser["userID"] ?>" /><input name="game1total" type="hidden" value="<?php echo $totalRows_rsScore3; ?>" /><input class="submit button centered" type="submit" name="Submit" id="Submit" value="Submit">
+                  <input type="hidden" name="MM_insert" value="form1" />
+                  <input type="hidden" name="MM_update" value="form1" />
+              </form>
+            </div>
+            <div id="tryAgain" class="popup">
+            	<h2>Incorrect</h2>
+       		  <form id="form2" name="form2" action="<?php echo $editFormAction; ?>" method="POST"><input name="entryNumber" type="hidden" value="" /><input name="userName" type="hidden" value="" /><input type="hidden" name="question2" id="question2" value=""><input type="hidden" name="response2" id="response2" value=""><input name="tally" type="hidden" value="0" /><input name="questionNumber" type="hidden" value="<?php echo $currentQuestion; ?>" /><input name="userNumber" type="hidden" value="<?=$row_rsUser["userID"] ?>" /><input name="game1total" type="hidden" value="<?php echo $totalRows_rsScore3; ?>" /><input class="submit button centered" type="submit" name="Submit" id="Submit" value="Submit">
+           		  <input type="hidden" name="MM_insert" value="form2" />
+                  <input type="hidden" name="MM_update" value="form2" />
+                </form>
+            </div>
+            
+        </div>
+        
+        
+        <br />
+    </div>
+</body>
+
+
+<script type="text/javascript">
+
+var question = 1;
+
+function newQuestion() {
+	var randomNumber=Math.floor(Math.random()*20+1);
+	if (randomNumber>20) {
+		randomNumber=1;
+	}
+	if (randomNumber<1){
+		randomNumber=1;
+	}
+	question=randomNumber;
+	///document.form1.question1.value = randomNumber;
+	///document.form2.question2.value = randomNumber;
+}
+
+function checkAnswer(yourAnswer) {
+	if (question == yourAnswer) {
+		setTimeout('document.getElementById("greatJob").className = "popup popupActive"',500);
+	}
+	else {
+		setTimeout('document.getElementById("tryAgain").className = "popup popupActive"',500);
+	}
+};
+
+function displayQuestion() {
+	document.getElementById(question).className = "showMe";
+};
+
+newQuestion();
+displayQuestion();
+
+
+
+</script>
+</body>
+</html>
